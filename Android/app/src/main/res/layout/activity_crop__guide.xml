@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#092956">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/name"
+
+        android:layout_marginTop="21dp"
+        android:layout_marginLeft="25dp"
+        android:hint="Crop Name"
+        android:textStyle="bold"
+        android:text="Wheat"
+        android:textColor="#2978B4"
+        android:textSize="50dp"
+        />
+    
+    <LinearLayout
+        android:layout_width="308dp"
+        android:layout_height="232dp"
+        android:id="@+id/lay1"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="110dp">
+        <ImageView
+            android:layout_width="238dp"
+            android:layout_height="172dp"
+            android:layout_marginLeft="31dp"
+        android:layout_marginTop="30dp"
+            android:background="#3A5378"
+
+            android:scaleType="fitXY"
+
+            android:id="@+id/crop_image"
+
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="308dp"
+        android:layout_height="332dp"
+        android:layout_below="@id/lay1"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/textbox"
+        android:layout_marginStart="21dp"
+        android:layout_marginBottom="20dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="21dp"
+        android:padding="10dp"
+        android:id="@+id/crop_detail"
+
+        android:textSize="27sp"/>
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+
+</ScrollView>
