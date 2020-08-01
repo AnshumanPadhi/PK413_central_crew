@@ -1,0 +1,81 @@
+
+UTTAR PRADESH - 1
+
+['Agra', 'Aligarh', 'Allahabad', 'Ambedhkarnagar', 'Amethi',
+       'Auraiya', 'Azamgarh', 'Baghpat', 'Baharaich', 'Ballia',
+       'Balrampur', 'Banda', 'Barabanki', 'Bareilly', 'Basti', 'Bijnor',
+       'Bulandsahar', 'Chandauli', 'Deoria', 'Etah', 'Etawah', 'Faizabad',
+       'Farukkhabad', 'Fatehpur', 'Firozabad', 'Gautambudhnagar',
+       'Gazipur', 'Ghaziabad', 'Gonda', 'Gorakhpur', 'Hamirpur', 'Jalaun',
+       'Jaunpur', 'Jhansi', 'Kannauj', 'Kanpur Dehat', 'Kanpur Nagar',
+       'Kaushambi', 'Kheri', 'Kushi Nagar', 'Lalitpur', 'Lucknow',
+       'Maharajganj', 'Mahoba', 'Mainpuri', 'Mathura', 'Mau', 'Meerut',
+       'Mirzapur', 'Moradabad', 'Muzaffar Nagar', 'Pilhibhit',
+       'Pratapgarh', 'Rae Bareli', 'Rampur', 'Saharanpur',
+       'Sant Kabir Nagar', 'Sant Ravidas Nagar', 'Shah Jahanpur',
+       'Shrawasti', 'Siddharth Nagar', 'Sitapur', 'Sonbhadra',
+       'Sultanpur', 'Unnao', 'Varanasi']
+
+
+[ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
+       17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
+       34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
+       51, 52, 53, 54, 55, 56, 57, 58, 66, 59, 60, 61, 67, 62, 63, 64, 65]
+
+
+HARYANA - 2
+
+['BHIWANI', 'FARIDABAD', 'FATEHABAD', 'GURGAON', 'HISAR', 'JHAJJAR',
+       'JIND', 'KAITHAL', 'KARNAL', 'KURUKSHETRA', 'MEWAT', 'PALWAL',
+       'PANCHKULA', 'PANIPAT', 'REWARI', 'ROHTAK', 'SIRSA', 'SONIPAT',
+       'YAMUNANAGAR', 'AMBALA']
+
+[ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+       18, 19,  0]
+
+
+PUNJAB - 3
+
+['Amritsar', 'Barnala', 'Bathinda', 'Faridkot', 'Fatehgarh Sahib',
+       'Fazilka', 'Firozepur', 'Gurdaspur', 'Hoshiarpur', 'Jalandhar',
+       'Kapurthala', 'Ludhiana', 'Mansa', 'Moga', 'Muktsar', 'Nawanshahr',
+       'Pathankot', 'Patiala', 'Rupnagar', 'S.A.S Nagar', 'Sangrur',
+       'Tarn Tarn']
+
+[ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
+       17, 18, 19, 20, 21]
+
+
+
+
+MAHARASHTRA - 4
+
+['AHMADNAGAR', 'AKOLA', 'AMARAVATI', 'AURANGABAD', 'BHANDARA',
+       'BID', 'BULDHANA', 'CHANDRAPUR', 'DHULE', 'GADCHIROLI', 'GONDIYA',
+       'HINGOLI', 'JALGAON', 'JALNA', 'KOLHAPUR', 'LATUR', 'MUMBAI CITY',
+       'NAGPUR', 'NANDED', 'NANDURBAR', 'NASIK', 'OSMANABAD', 'PALGHAR',
+       'PARBHANI', 'PUNE', 'RAIGARH', 'RATNAGIRI', 'SANGLI', 'SATARA',
+       'SINDHUDURG', 'SOLAPUR', 'SUBURBAN MUMBAI', 'THANE', 'WARDHA',
+       'WASHIM', 'YAVATMAL']
+
+
+[ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
+       17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
+       34, 35]
+
+
+BIHAR - 5
+
+['ARARIYA', 'ARWAL', 'AURANGABAD', 'BANKA', 'BEGUSARAI', 'BHABUA',
+       'BHAGALPUR', 'BHOJPUR', 'BUXAR', 'DRABHANGA', 'GAYA', 'GOPALGANJ',
+       'JAHANABAD', 'JAMUI', 'KATIHAR', 'KHAGARIA', 'KISHANGANJ',
+       'LAKHISARAI', 'MADHEPURA', 'MADUBANI', 'MUNGER', 'MUZAFFARPUR',
+       'NALANDA', 'NAWADA', 'PACHIM CHAMPARAN', 'PATNA',
+       'PURBA CHAMPARAN', 'PURNIA', 'ROHTAS', 'SAHARSA', 'SAMASTIPUR',
+       'SARAN', 'SHEIKHPURA', 'SHEOHAR', 'SITAMARHI', 'SIWAN', 'SUPAUL',
+       'VAISHALI']
+
+[ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
+       17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
+       34, 35, 36, 37]
+
