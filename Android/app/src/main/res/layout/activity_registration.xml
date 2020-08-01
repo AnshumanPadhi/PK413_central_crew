@@ -7,14 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".Registration">
 
-    <ImageView
-        android:layout_width="245dp"
-        android:layout_height="111dp"
-        android:scaleType="fitXY"
-        android:id="@+id/title"
-        android:src="@drawable/agritect"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="61dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@android:color/white"
+        android:fontFamily="sans-serif-light"
+        android:textStyle="italic"
+        android:textSize="72sp"
+        android:textAlignment="center"
+        android:layout_margin="12dp"/>
 
     <EditText
         android:layout_width="314dp"

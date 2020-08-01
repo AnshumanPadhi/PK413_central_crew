@@ -30,40 +30,5 @@ public class Crop_Guide extends AppCompatActivity {
         String Crop_Name=intent.getStringExtra("Crop_Name");
 
         name.setText(Crop_Name);
-
-
-        if(Crop_Name.equalsIgnoreCase("Rice"))
-        {
-            crop_imaage.setImageResource(R.drawable.rice);
-            details.setText("TEMP: 34degrre\nPressure: 34");
-        }
-
-        else if(Crop_Name.equalsIgnoreCase("Wheat"))
-        {
-            crop_imaage.setImageResource(R.drawable.wheat);
-            details.setText("TEMP: 34degrre\nPressure: 34");
-
-        }
-
-        else if(Crop_Name.equalsIgnoreCase("Maize"))
-        {
-            crop_imaage.setImageResource(R.drawable.maize);
-            details.setText("TEMP: 34degrre\nPressure: 34");
-        }
-        else if (Crop_Name.equalsIgnoreCase("Suger Cane"))
-        {
-            crop_imaage.setImageResource(R.drawable.sugercane);
-            details.setText("TEMP: 34degrre\nPressure: 34");
-        }
-        else if(Crop_Name.equalsIgnoreCase("Cotton"))
-        {
-            crop_imaage.setImageResource(R.drawable.cotton);
-            details.setText("TEMP: 34degrre\nPressure: 34");
-        }
-        else if(Crop_Name.equalsIgnoreCase("Soya"))
-        {
-            crop_imaage.setImageResource(R.drawable.rice);
-            details.setText("TEMP: 34degrre\nPressure: 34");
-        }
     }
 }

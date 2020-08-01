@@ -39,10 +39,10 @@ public class YieldCompareActivity extends AppCompatActivity {
     private String state1, state2;
     private GetDataService service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
     private static final String TAG = "YieldComparison";
-    private ArrayList<Entry> values = new ArrayList<>();
-    private LineDataSet lineDataSet = new LineDataSet(null, null);
+    private ArrayList<Entry> values1, values2;
     private ArrayList<ILineDataSet> dataSets = new ArrayList<>();
     private LineChart lineChart;
+    private LineDataSet lineDataSet1, lineDataSet2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +59,8 @@ public class YieldCompareActivity extends AppCompatActivity {
         lineChart.setDragEnabled(true);
         lineChart.setScaleEnabled(false);
 
-        final LineDataSet set = new LineDataSet(values, "Data set");
-        set.setFillAlpha(110);
+        values1 = new ArrayList<>();
+        values2 = new ArrayList<>();
 
         databaseReference.child(state).child(crop).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -107,7 +107,8 @@ public class YieldCompareActivity extends AppCompatActivity {
                     Toast.makeText(YieldCompareActivity.this, "Please select two different districts", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                loadData2();
+
+                loadData();
             }
 
             @Override
@@ -131,23 +132,32 @@ public class YieldCompareActivity extends AppCompatActivity {
             return;
         }
 
-        values = new ArrayList<>();
+        if(state1.equals(state2)){
+            Toast.makeText(YieldCompareActivity.this, "Please select two different districts", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        lineDataSet1 = new LineDataSet(values1, "Yield of " + crop + " in " + state1);
+        lineDataSet2 = new LineDataSet(values2, "Yield of " + crop + " in " + state2);
+
+        lineDataSet2.setColor(getResources().getColor(R.color.yellow, getTheme()));
+
+        lineDataSet2.setLineWidth(2f);
+        lineDataSet1.setLineWidth(2f);
+
+        values1 = new ArrayList<>();
+        values2 = new ArrayList<>();
         dataSets = new ArrayList<>();
 
         databaseReference.child(state).child(crop).child(state1).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    values.add(new Entry(snapshot.child("Year").getValue(Float.class)
+                    values1.add(new Entry(snapshot.child("Year").getValue(Float.class)
                             , snapshot.child("Yield").getValue(Float.class)));
-                    lineDataSet.setValues(values);
-                    lineDataSet.setLabel("Yield of " + crop + " in " + state1);
-                    dataSets.add(lineDataSet);
-                    LineData lineData = new LineData(dataSets);
-                    //lineChart.clear();
-                    lineChart.setData(lineData);
-                    lineChart.invalidate();
                 }
+                Log.d(TAG, "onDataChange:1 " + values1);
+                lineDataSet1.setValues(values1);
             }
 
             @Override
@@ -155,31 +165,16 @@ public class YieldCompareActivity extends AppCompatActivity {
 
             }
         });
-    }
-
-    private void loadData2(){
-
-        if(state1 == null || state2 == null){
-            return;
-        }
-
-        values = new ArrayList<>();
-        dataSets = new ArrayList<>();
 
         databaseReference.child(state).child(crop).child(state2).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    values.add(new Entry(snapshot.child("Year").getValue(Float.class)
+                    values2.add(new Entry(snapshot.child("Year").getValue(Float.class)
                             , snapshot.child("Yield").getValue(Float.class)));
-                    lineDataSet.setValues(values);
-                    lineDataSet.setLabel("Yield of " + crop + " in " + state1);
-                    dataSets.add(lineDataSet);
-                    LineData lineData = new LineData(dataSets);
-                    lineChart.clear();
-                    lineChart.setData(lineData);
-                    lineChart.invalidate();
                 }
+                Log.d(TAG, "onDataChange:2 " + values2);
+                lineDataSet2.setValues(values2);
             }
 
             @Override
@@ -187,5 +182,13 @@ public class YieldCompareActivity extends AppCompatActivity {
 
             }
         });
+
+        dataSets.add(lineDataSet1);
+        dataSets.add(lineDataSet2);
+
+        LineData lineData = new LineData(dataSets);
+        lineChart.setData(lineData);
+        lineChart.notifyDataSetChanged();
+        lineChart.invalidate();
     }
 }
