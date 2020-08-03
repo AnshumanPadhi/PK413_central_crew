@@ -4,16 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    android:background="@color/background_color"
-    >
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <android.support.v7.widget.RecyclerView
-        android:layout_marginTop="3dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
         android:layout_width="match_parent"
-        android:background="#fffefe"
         android:layout_height="match_parent"
-        android:id="@+id/recycler"/>
+        android:layout_marginTop="3dp" />
 
     <ProgressBar
         android:id="@+id/progress"

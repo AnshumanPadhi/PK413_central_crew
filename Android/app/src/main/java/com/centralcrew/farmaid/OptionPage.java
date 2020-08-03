@@ -38,6 +38,7 @@ public class OptionPage extends AppCompatActivity{
 
     private String TAG = "OptionPage";
     private float latestYear, latestYield;
+    private int district_encode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ public class OptionPage extends AppCompatActivity{
         state=intent.getStringExtra("State");
         dist=intent.getStringExtra("District");
         crop = intent.getStringExtra("Crop");
+        district_encode = intent.getIntExtra("dist_enc", 0);
 
         CardView yieldCompareCv = findViewById(R.id.yield_compare_Cv);
         CardView cropGuideCv = findViewById(R.id.crop_guide_Cv);
@@ -100,6 +102,7 @@ public class OptionPage extends AppCompatActivity{
                 i.putExtra("state", state);
                 i.putExtra("district", dist);
                 i.putExtra("crop", crop);
+                i.putExtra("dist_enc", district_encode);
                 i.putExtra("latestYear", latestYear);
                 i.putExtra("latestYield", latestYield);
                 startActivity(i);

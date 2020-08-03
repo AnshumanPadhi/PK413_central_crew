@@ -195,7 +195,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Crop Guide"
+                            android:text="Reports"
                             android:textSize="21sp"
                             android:textColor="@android:color/white"
                             android:fontFamily="sans-serif-light"
@@ -204,7 +204,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Important Information about the selected crop."
+                            android:text="Download detailed agricultural reports based on the selected crop"
                             android:textSize="17sp"
                             android:textColor="@android:color/white"
                             android:fontFamily="sans-serif-light"

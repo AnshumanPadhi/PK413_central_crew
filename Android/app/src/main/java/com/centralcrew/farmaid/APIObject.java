@@ -5,17 +5,15 @@ import com.google.gson.annotations.SerializedName;
 
 public class APIObject {
 
-    public APIObject(int year, int district_encode) {
+    public APIObject(int district_encode, int year) {
         Year = year;
         District_encode = district_encode;
     }
 
     @SerializedName("Year")
-    @Expose
     private int Year;
 
     @SerializedName("District_encode")
-    @Expose
     private int District_encode;
 
     public int getDistrict_encode() {

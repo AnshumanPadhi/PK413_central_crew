@@ -28,6 +28,8 @@ public class HomePage extends AppCompatActivity{
     private Spinner stateSpinner, districtSpinner, cropSpinner;
     private ProgressBar progressBar;
 
+    private int district_encode = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,6 +94,7 @@ public class HomePage extends AppCompatActivity{
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 dist = adapterView.getItemAtPosition(i).toString();
+                district_encode = i;
             }
 
             @Override
@@ -148,6 +151,7 @@ public class HomePage extends AppCompatActivity{
         intent.putExtra("State",state);
         intent.putExtra("District",dist);
         intent.putExtra("Crop", crop);
+        intent.putExtra("dist_enc", district_encode);
         startActivity(intent);
     }
 }
