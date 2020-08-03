@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html>
+  <html lang="en">
+    <head>
+      <!-- Required meta tags always come first -->
+      <meta charset="utf-8" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1
+      shrink-to-fit=no"
+      />
+      <!-- <meta http-equiv="x-ua-compatible" content="ie=edge" />-->
+      <!-- Allows web authors to choose what version of Internet Explorer the page should be rendered as.
+      -->
+
+      <!-- Bootstrap CSS -->
+      <!--build:css css/main.css-->
+      <link
+        rel="stylesheet"
+        href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+      />
+      <link
+        rel="stylesheet"
+        href="node_modules/font-awesome/css/font-awesome.min.css"
+      />
+      <link rel="stylesheet" href="stylesheets/Homestyle.css" />
+      <title>
+        Reports
+      </title>
+    </head>
+    <body>
+
+        <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+            <div class="container">
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#Navbar"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+             
+              <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ">
+                      <a class="navbar-brand mr-auto" href="/Home.html"><img src="Images/home-run.svg" height="30" width="42">Home</a>
+              
+                    </li>&nbsp;
+                    <li class="nav-item">
+                      <a class="navbar-brand mr-auto" href="/yieldPredictor.html"><img src="Images/graph.svg" height="30" width="42">Predictor</a>
+               
+                    </li>&nbsp;
+                    <li class="nav-item">
+                      <a class="navbar-brand mr-auto" href="/smartYieldCalculator.html"><img src="Images/calculator.svg" height="30" width="42">Calculator</a>
+              
+                    </li>&nbsp;
+                   
+                    <li class="nav-item">
+                      <a class="navbar-brand mr-auto" href="/yieldComparison.html"><img src="Images/sales.svg" height="30" width="42">Comparison</a>
+               
+                    </li>&nbsp;
+                  
+                  </ul>
+                
+              </div>
+            </div>
+          </nav>
+          
+          <header class="jumbotron">
+            <!--jumbotron allows you to set apart the component inside it from rest of the page-->
+            <div class="container">
+              <div class="row row-header">
+                <div class="col-12 col-sm-6">
+                  <h1>Crop Report</h1>
+                  <p>
+                     Descriptive study about the materialistic factors that are relation with crop production and management in a report format.
+                  </p>
+                </div>
+                <div class="col-12  col-sm-1 align-self-center"></div>
+                
+                  <div class="col-12  col-sm-2 align-self-center">
+                   
+                    
+                </div>
+                <div class="col-12  col-sm-1 align-self-center"></div>
+                <div class=" col-12 col-sm-2 align-self-center ">
+                    <img src="Images/document.svg" class="img-fluid" height="40">
+                </div>
+                </div>
+            </div>
+            </div>
+           
+              
+            
+                 
+            
+          </header>
+      
+          <div class="container">
+            
+            <div class="row row-content align-items-center">
+              <div class="col-12 col-sm-2 col-md-2 "></div>
+              <div class="col-12 col-sm-3 col-md-3 ">
+                <strong>District Name :</strong>
+                <input type="text" placeholder="Enter Crop Name" class="form-control" id="dnamei"><br/>
+                <strong>Yield(tons per hectare) :</strong>
+                <input type="number" placeholder="Enter Yield/hectare value" class="form-control"  id="yai"><br/>
+                <strong>Land Available(in hectare) :</strong>
+                <input type="number" placeholder="Enter Land Available(in hectare)" class="form-control"  id="lai"><br/>
+                
+
+              </div> 
+              
+              <div class="col-12 col-sm-3 col-md-3 "></div>
+              
+              <div class="col-5 col-sm-2 col-md-2 ">
+                <strong>Select desired crop :</strong><br/>
+                <button type="button" onclick="rice();" class="btn  btn-danger btn-block ">Rice</button>
+                <button type="button" onclick="wheat()" class="btn  btn-success btn-block">Wheat</button>
+                <button type="button" onclick="maize()" class="btn  btn-primary btn-block ">Maize</button>
+                <button type="button" onclick="sugarcane()" class="btn  btn-warning btn-block">Sugarcane</button>
+
+
+              </div>
+              <div class="col-12 col-sm-3 col-md-3 "></div>
+              
+             
+
+            </div>
+
+            <div class="row row-content align-items-center">
+             
+             <div class="col-12">
+              <div id="reportRice" style="display: none;">
+                <a
+                  role="text"
+                  class="badge badge-pill badge-danger"
+                  style="color: floralwhite;"
+                  ><h4>Crop Report</h4></a
+                ><br /><br />
+              
+                <h5>Crop Name : Rice <span id="cn1"></span></h5>
+                <h5>District Name :&nbsp;<span id="dn1"></span></h5>
+                <h5>Yield Value (Ton per Hectare) :&nbsp;<span id="yv1"></span></h5>
+                <h5>Land Available (in Hectare) :&nbsp;<span id="la1"></span></h5>
+                <br />
+                <br />
+              
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">ATTRIBUTE</th>
+                      <th scope="col">AVERAGE</th>
+                      <th scope="col">TOTAL</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <th>SEEDS</th>
+                      <td>8 kg/acre</td>
+                      <td id="rseed"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <th>FERTILIZERS</th>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>UREA</th>
+                      <td>110 kg/acre</td>
+                      <td id="rfer1"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>DAP/SSP</th>
+                      <td>27/75 kg/acre</td>
+                      <td id="rfer2"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>MOP</th>
+                      <td>20 kg/acre</td>
+                      <td id="rfer3"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>ZINC</th>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <th>NUTRIENT REQUIREMENTS</th>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>Nitrogen</th>
+                      <td>50 kg/acre</td>
+                      <td id="rnutri1"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>Phosphorous</th>
+                      <td>12 kg/acre</td>
+                      <td id="rnutri2"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>Potash</th>
+                      <td>12 kg/acre</td>
+                      <td id="rnutri3"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">4</th>
+                      <th>WEED CONTROL</th>
+                      <td>Metsulfuron 20 WP @ 30 gm/acre (in 150 ltr of water)</td>
+                      <td id="rweed"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">5</th>
+                      <th>WATER REQUIREMENT</th>
+                      <td>4000 litres/kg</td>
+                      <td id="rwater"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">6</th>
+                      <th>STORAGE BAGS</th>
+                      <td>Per Bag capacity: 100kg</td>
+                      <td id="rbag"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">7</th>
+                      <th>STORAGE TEMPERATURE</th>
+                      <td>40 F</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">8</th>
+                      <th>LOGISTICS</th>
+                      <td>Truck Capacity: 20,000 kg</td>
+                      <td id="rlogi"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div id="reportWheat" style="display: none;">
+                <a
+                  role="text"
+                  class="badge badge-pill badge-success"
+                  style="color: floralwhite;"
+                  ><h4>Crop Report</h4></a
+                ><br /><br />
+              
+                <h5>Crop Name : Wheat <span id="cn2"></span></h5>
+                <h5>District Name :&nbsp;<span id="dn2"></span></h5>
+                <h5>Yield Value (Ton per Hectare) :&nbsp;<span id="yv2"></span></h5>
+                <h5>Land Available (in Hectare) :&nbsp;<span id="la2"></span></h5>
+                <br />
+                <br />
+              
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">ATTRIBUTE</th>
+                      <th scope="col">AVERAGE</th>
+                      <th scope="col">TOTAL</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <th>SEEDS</th>
+                      <td>45 kg/acre</td>
+                      <td id="wseed"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <th>FERTILIZERS</th>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>UREA</th>
+                      <td>110 kg/acre</td>
+                      <td id="wfer1"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>DAP</th>
+                      <td>55 kg/acre</td>
+                      <td id="wfer2"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>MOP</th>
+                      <td>20 kg/acre</td>
+                      <td id="wfer3"></td>
+                    </tr>
+              
+                    <tr>
+                      <th scope="row">3</th>
+                      <th>NUTRIENT REQUIREMENTS</th>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>Nitrogen</th>
+                      <td>50 kg/acre</td>
+                      <td id="wnutri1"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>Phosphorous</th>
+                      <td>25 kg/acre</td>
+                      <td id="wnutri2"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>Potash</th>
+                      <td>12 kg/acre</td>
+                      <td id="wnutri3"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">4</th>
+                      <th>WEED CONTROL</th>
+                      <td>Pendimethalin 1 litre/acre (in 200 ltr of water)</td>
+                      <td id="wweed"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">5</th>
+                      <th>WATER REQUIREMENT</th>
+                      <td>2300 litres/kg</td>
+                      <td id="wwater"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">6</th>
+                      <th>STORAGE BAGS</th>
+                      <td>Per Bag capacity: 100kg</td>
+                      <td id="wbag"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">7</th>
+                      <th>STORAGE TEMPERATURE</th>
+                      <td>40 F</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">8</th>
+                      <th>LOGISTICS</th>
+                      <td>Truck Capacity: 20,000 kg</td>
+                      <td id="wlogi"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <div id="reportMaize"  style="display: none;">
+                <a
+                  role="text"
+                  class="badge badge-pill badge-primary"
+                  style="color: floralwhite;"
+                  ><h4>Crop Report</h4></a
+                ><br /><br />
+              
+                <h5>Crop Name : Maize <span id="cn3"></span></h5>
+                <h5>District Name :&nbsp;<span id="dn3"></span></h5>
+                <h5>Yield Value (Ton per Hectare) :&nbsp;<span id="yv3"></span></h5>
+                <h5>Land Available (in Hectare) :&nbsp;<span id="la3"></span></h5>
+                <br />
+                <br />
+              
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">ATTRIBUTE</th>
+                      <th scope="col">AVERAGE</th>
+                      <th scope="col">TOTAL</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <th>SEEDS</th>
+                      <td>10 kg/acre</td>
+                      <td id="mseed"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <th>FERTILIZERS</th>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>UREA</th>
+                      <td>100 kg/acre</td>
+                      <td id="mfer1"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>DAP/SSP</th>
+                      <td>45/130 kg/acre</td>
+                      <td id="mfer2"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>MOP</th>
+                      <td>18 kg/acre</td>
+                      <td id="mfer3"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>Zinc</th>
+                      <td>8 kg/acre</td>
+                      <td id="mfer4"></td>
+                    </tr>
+              
+                    <tr>
+                      <th scope="row">3</th>
+                      <th>NUTRIENT REQUIREMENTS</th>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>Nitrogen</th>
+                      <td>45 kg/acre</td>
+                      <td id="mnutri1"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>Phosphorous</th>
+                      <td>20 kg/acre</td>
+                      <td id="mnutri2"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>Potash</th>
+                      <td>10 kg/acre</td>
+                      <td id="mnutri3"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">4</th>
+                      <th>WEED CONTROL</th>
+                      <td>Atrazine @ 500gm/acre (in 200 ltr of water)</td>
+                      <td id="mweed"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">5</th>
+                      <th>WATER REQUIREMENT</th>
+                      <td>2800 litres/kg</td>
+                      <td id="mwater"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">6</th>
+                      <th>STORAGE BAGS</th>
+                      <td>Per Bag capacity: 100kg</td>
+                      <td id="mbag"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">7</th>
+                      <th>STORAGE TEMPERATURE</th>
+                      <td>Below 50 F</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">8</th>
+                      <th>LOGISTICS</th>
+                      <td>Truck Capacity: 20,000 kg</td>
+                      <td id="mlogi"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div id="reportSugarcane"  style="display: none;">
+                <a
+                  role="text"
+                  class="badge badge-pill badge-warning"
+                  style="color: floralwhite;"
+                  ><h4>Crop Report</h4></a
+                ><br /><br />
+              
+                <h5>Crop Name : Sugarcane <span id="cn4"></span></h5>
+                <h5>District Name :&nbsp;<span id="dn4"></span></h5>
+                <h5>Yield Value (Ton per Hectare) :&nbsp;<span id="yv4"></span></h5>
+                <h5>Land Available (in Hectare) :&nbsp;<span id="la4"></span></h5>
+                <br />
+                <br />
+              
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">ATTRIBUTE</th>
+                      <th scope="col">AVERAGE</th>
+                      <th scope="col">TOTAL</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <th>SEEDS</th>
+                      <td>3500 kg/acre</td>
+                      <td id="sseed"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <th>FERTILIZERS</th>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>UREA</th>
+                      <td>180 kg/acre</td>
+                      <td id="sfer1"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>SSP</th>
+                      <td>125 kg/acre</td>
+                      <td id="sfer2"></td>
+                    </tr>
+              
+                    <tr>
+                      <th scope="row">3</th>
+                      <th>NUTRIENT REQUIREMENTS</th>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>Nitrogen</th>
+                      <td>80 kg/acre</td>
+                      <td id="snutri1"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>Phosphorous</th>
+                      <td>20 kg/acre</td>
+                      <td id="snutri2"></td>
+                    </tr>
+              
+                    <tr>
+                      <th scope="row">4</th>
+                      <th>WEED CONTROL</th>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <th>Diuron</th>
+                      <td>1.2 kg/acre</td>
+                      <td id="sweed"></td>
+                    </tr>
+              
+                    <tr>
+                      <th scope="row">5</th>
+                      <th>WATER REQUIREMENT</th>
+                      <td>2500 litres/kg</td>
+                      <td id="swater"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">6</th>
+                      <th>STORAGE BAGS</th>
+                      <td>Per Bag capacity: 100kg</td>
+                      <td id="sbag"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">7</th>
+                      <th>STORAGE TEMPERATURE</th>
+                      <td>Below 50 F</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">8</th>
+                      <th>LOGISTICS</th>
+                      <td>Truck Capacity: 20,000 kg</td>
+                      <td id="slogi"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              
+              
+               
+                 
+            </div>
+            
+             
+               
+              
+            </div>
+           
+      
+          
+           
+            
+      
+          </div>
+      
+          <footer class="footer">
+            <div class="container">
+              <div class="row">
+                <div class="col-4 col-sm-2">
+                
+                </div>
+                <div class="col-8 col-sm-6">
+               
+                </div>
+                <div class="col-12 col-sm-4 align-self-center">
+                  <div class="text-center">
+                    
+                    <a
+                      class="btn btn-social-icon btn-linledin"
+                      href="http://www.linkedin.com"
+                      ><i class="fa fa-linkedin fa-lg"></i
+                    ></a>
+                    <a
+                      class="btn btn-social-icon btn-twitter"
+                      href="http://twitter.com/"
+                      ><i class="fa fa-twitter fa-lg"></i
+                    ></a>
+                    
+                    <a class="btn btn-social-icon" href="mailto:"
+                      ><i class="fa fa-envelope-o fa-lg"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-auto">
+                  <p>2020 Central Crew</p>
+                </div>
+              </div>
+            </div>
+          </footer>
+          <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+          <!-- build:js js/main.js -->
+          <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+          <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+          <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+          <script src="javascripts/reports.js"></script>
+          <!--<script src="javascripts/cropGuide.js"></script>-->
+          
+         
+    </body>
+  </html>
+</html>

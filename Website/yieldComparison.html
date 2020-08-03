@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <html lang="en">
+    <head>
+      <!-- Required meta tags always come first -->
+      <meta charset="utf-8" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1
+      shrink-to-fit=no"
+      />
+      <!-- <meta http-equiv="x-ua-compatible" content="ie=edge" />-->
+      <!-- Allows web authors to choose what version of Internet Explorer the page should be rendered as.
+      -->
+
+      <!-- Bootstrap CSS -->
+      <!--build:css css/main.css-->
+      <link
+        rel="stylesheet"
+        href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+      />
+      <link
+        rel="stylesheet"
+        href="node_modules/font-awesome/css/font-awesome.min.css"
+      />
+       <!-- Load c3.css -->
+    <link href="stylesheets/c3.css" rel="stylesheet" type="text/css" />
+
+    <!-- Load d3.js and c3.js -->
+    <script src="javascripts/d3.v3.min.js" charset="utf-8"></script>
+    <script src="javascripts/c3.min.js"></script>
+
+    <!-- Load papaparse.js -->
+    <script src="javascripts/papaparse.min.js"></script>
+      <link rel="stylesheet" href="stylesheets/Homestyle.css" />
+      <title>
+        Yield Comparison
+      </title>
+    </head>
+    <body>
+
+        <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+            <div class="container">
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#Navbar"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+             
+              <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                    <a class="navbar-brand mr-auto" href="/Home.html"><img src="Images/home-run.svg" height="30" width="42">Home</a>
+            
+                  </li>&nbsp;
+                  <li class="nav-item">
+                    <a class="navbar-brand mr-auto" href="/yieldPredictor.html"><img src="Images/graph.svg" height="30" width="42">Predictor</a>
+             
+                  </li>&nbsp;
+                  <li class="nav-item">
+                    <a class="navbar-brand mr-auto" href="/smartYieldCalculator.html"><img src="Images/calculator.svg" height="30" width="42">Calculator</a>
+            
+                  </li>&nbsp;
+                 
+                  <li class="nav-item">
+                    <a class="navbar-brand mr-auto" href="/cropGuide.html"><img src="Images/document.svg" height="30" width="42">Crop Report</a>
+             
+                  </li>&nbsp;
+                
+                </ul>
+                
+              </div>
+            </div>
+          </nav>
+          
+          <header class="jumbotron">
+            <!--jumbotron allows you to set apart the component inside it from rest of the page-->
+            <div class="container">
+              <div class="row row-header">
+                <div class="col-12 col-sm-6">
+                  <h1>Yield Comparison</h1>
+                  <p>
+                    It is a Graphical representation and comparative study of a single crop yield between any 2 location.
+                   
+                  </p>
+                </div>
+                <div class="col-12  col-sm-1 align-self-center"></div>
+                
+                  <div class="col-12  col-sm-2 align-self-center">
+                   
+                    
+                </div>
+                <div class="col-12  col-sm-1 align-self-center"></div>
+                <div class=" col-12 col-sm-2 align-self-center ">
+                    <img src="Images/sales.svg" class="img-fluid" height="40">
+                </div>
+                </div>
+            </div>
+            </div>
+           
+              
+            
+                 
+            
+          </header>
+      
+          <div class="container">
+      
+            <div class="row row-content align-items-center">
+             
+              <div class="col-12 col-sm-1 col-md-1 "></div>
+              <div class="col-12 col-sm-3 col-md-3"><br/>
+                <label for="_state"><strong>Select State:</strong></label>
+                <select class= "custom-select" searchable="Search here.." name="States" id="_state" onchange="changeDistList()" required>
+                  <option value="" disabled selected></option>
+                 <option value="Bihar">Bihar</option>
+                  <option value="Haryana">Haryana</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Punjab">Punjab</option>
+                  <option value="UttarPradesh">UttarPradesh</option>
+                  
+                </select>
+                <div class="invalid-feedback">
+                    Please provide a State.
+                </div>
+                <br/><br/>
+                <label for="_crop"><strong>Select Crop:</strong></label>
+                <select class= "custom-select " searchable="Search here.." name="Crops" id="_crop"  required>
+                   
+                  </select>
+                  <div class="invalid-feedback">
+                    Please provide a Crop.
+                </div><br/><br/>
+               
+            </div>
+            <div class="col-12 col-sm-1 col-md-1 "></div>
+            <div class="col-12 col-sm-3 col-md-3">
+                <label for="_district1"><strong>Select District 1:</strong></label>
+                <select class= "custom-select " searchable="Search here.." name="Districts" id="_district1"  required>
+                   
+                  </select>
+                  <div class="invalid-feedback">
+                    Please provide a District.
+                </div>
+                <br/><br/>
+                <label for="_district2"><strong>Select District 2:</strong></label>
+                <select class= "custom-select " searchable="Search here.." name="Districts" id="_district2"  required>
+                   
+                  </select>
+                  <div class="invalid-feedback">
+                    Please provide a District.
+                </div>
+            </div>
+            <div class="col-12 col-sm-1 col-md-1"></div>
+            <div class="col-12 col-sm-2 col-md-2 "><br/>
+                <button  onclick="compare()" class="btn  btn-danger ">Compare</button>
+            </div>
+            <div class="col-12 col-sm-1 col-md-1">
+               
+               
+             
+            </div>
+            
+      
+               
+              
+            </div>
+           
+      
+            
+      
+            <div class="row row-content align-items-center">
+              <div class="col-12 col-sm-1 col-md-1">
+               
+              </div>
+              <div class="col-12 col-sm col-md">
+                <div id="chart"></div>
+              
+               
+              </div>
+              <div class="col-12 col-sm-1 col-md-1">
+               
+              </div>
+            </div>
+            
+      
+          </div>
+      
+          <footer class="footer">
+            <div class="container">
+              <div class="row">
+                <div class="col-4 col-sm-2">
+                
+                </div>
+                <div class="col-8 col-sm-6">
+               
+                </div>
+                <div class="col-12 col-sm-4 align-self-center">
+                  <div class="text-center">
+                    
+                    <a
+                      class="btn btn-social-icon btn-linledin"
+                      href="http://www.linkedin.com"
+                      ><i class="fa fa-linkedin fa-lg"></i
+                    ></>
+                    <a
+                      class="btn btn-social-icon btn-twitter"
+                      href="http://twitter.com/"
+                      ><i class="fa fa-twitter fa-lg"></i
+                    ></a>
+                   
+                    <a class="btn btn-social-icon" href="mailto:"
+                      ><i class="fa fa-envelope-o fa-lg"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-auto">
+                  <p>2020 Central Crew</p>
+                </div>
+              </div>
+            </div>
+          </footer>
+          <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+          <!-- build:js js/main.js -->
+          <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+          <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+          <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+          <script src="javascripts/yieldComparison.js"></script>
+          
+         
+    </body>
+  </html>
+</html>

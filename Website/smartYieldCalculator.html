@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+  <html lang="en">
+    <head>
+      <!-- Required meta tags always come first -->
+      <meta charset="utf-8" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1
+      shrink-to-fit=no"
+      />
+      <!-- <meta http-equiv="x-ua-compatible" content="ie=edge" />-->
+      <!-- Allows web authors to choose what version of Internet Explorer the page should be rendered as.
+      -->
+
+      <!-- Bootstrap CSS -->
+      <!--build:css css/main.css-->
+      <link
+        rel="stylesheet"
+        href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+      />
+      <link
+        rel="stylesheet"
+        href="node_modules/font-awesome/css/font-awesome.min.css"
+      />
+      
+     
+      <link rel="stylesheet" href="stylesheets/Homestyle.css" />
+      <title>
+        Yield Calculator
+      </title>
+    </head>
+    <body>
+
+        <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+            <div class="container">
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#Navbar"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+             
+              <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                    <a class="navbar-brand mr-auto" href="/Home.html"><img src="Images/home-run.svg" height="30" width="42">Home</a>
+            
+                  </li>&nbsp;
+                  <li class="nav-item">
+                    <a class="navbar-brand mr-auto" href="/yieldPredictor.html"><img src="Images/graph.svg" height="30" width="42">Predictor</a>
+            
+                  </li>&nbsp;
+                  <li class="nav-item">
+                    <a class="navbar-brand mr-auto" href="/yieldComparison.html"><img src="Images/sales.svg" height="30" width="42">Comparison</a>
+             
+                  </li>&nbsp;
+                  <li class="nav-item">
+                    <a class="navbar-brand mr-auto" href="/cropGuide.html"><img src="Images/document.svg" height="30" width="42">Crop Report</a>
+             
+                  </li>&nbsp;
+                
+                </ul>
+                
+              </div>
+            </div>
+          </nav>
+          
+          <header class="jumbotron">
+            <!--jumbotron allows you to set apart the component inside it from rest of the page-->
+            <div class="container">
+              <div class="row row-header">
+                <div class="col-12 col-sm-6">
+                  <h1>Smart Yield Calculator</h1>
+                  <p>
+                    This is a program which is designed specifically for the purpose of profit maximization along with the risk reduction, considering the parameter of crop failure.
+                   
+                  </p>
+                </div>
+                <div class="col-12  col-sm-1 align-self-center"></div>
+                
+                  <div class="col-12  col-sm-2 align-self-center">
+                   
+                    
+                </div>
+                <div class="col-12  col-sm-1 align-self-center"></div>
+                <div class=" col-12 col-sm-2 align-self-center ">
+                    <img src="Images/calculator.svg" class="img-fluid" height="40">
+                </div>
+                </div>
+            </div>
+            </div>
+           
+              
+            
+                 
+            
+          </header>
+          <div class="container">
+      
+            <div class="row row-content align-items-center">
+             
+                <div class="col-12 col-sm-1 col-md-1 "></div>
+            <div class="col-12 col-sm-3 col-md-3">
+                <h4 id="topic">Crop 1</h4><br/>
+                <input type="text" placeholder="Crop Name" class="form-control form-control-sm" id="_crop1name"><br/>
+
+                <input type="number" placeholder="MSP/Quintal (crop 1)(in Rs)" class="form-control form-control-sm" id="_crop1msp"><br/>
+                <!--(MSP/Quintal is the Minimum Support Price value for a quintal of the crop)</br></br>-->
+                <input type="number" placeholder="Investment/Quintal (crop 1)(in Rs)" class="form-control form-control-sm" id="_crop1inv" >
+                <!--<div class="align-items-center">(Investment/Quintal is the average investment required to produce a quintal of the crop).</div><br/>-->
+                <br/>
+                <input type="text" placeholder="Crop Yield/Acre (in Quintals)" class="form-control form-control-sm" id="_crop1yield"><br/>
+            </div>
+            <div class="col-12 col-sm-1 col-md-1 "></div>
+            <div class="col-12 col-sm-3 col-md-3">
+              <h4 id="topic">Crop 2</h4><br/>
+              <input type="text" placeholder="Crop Name" class="form-control form-control-sm" id="_crop2name"><br/>
+
+              <input type="number" placeholder="MSP/Quintal (crop 2)(in Rs)" class="form-control form-control-sm" id="_crop2msp"><br/>
+              <!--(MSP/Quintal is the Minimum Support Price value for a quintal of the crop)</br></br>-->
+              <input type="number" placeholder="Investment/Quintal (crop 2)(in Rs)" class="form-control form-control-sm" id="_crop2inv" >
+              <!--<div class="align-items-center">(Investment/Quintal is the average investment required to produce a quintal of the crop).</div><br/>-->
+            <br/>
+            <input type="text" placeholder="Crop Yield/Acre (in Quintals)" class="form-control form-control-sm" id="_crop2yield"><br/>
+            </div>
+            <div class="col-12 col-sm-1 col-md-1 "></div>
+            <div class="col-12 col-sm-2 col-md-2">
+              <h4 id="topic">Land Area</h4><br/>
+              <input type="number" placeholder="Land Area (in acres)" class="form-control form-control-sm" id="_landarea"><br/>
+              <button type="button" class="btn btn-primary" onclick="smartYield();">Get Smart Yield</button></div>
+           
+            <div class="col-12 col-sm-1 col-md-1 "></div>
+         
+           
+               
+             </div>
+           
+      
+            <div class="row row-content align-items-center">
+              <div class="col-12 col-sm-1 col-md-1"></div><br/>
+              <div class="col-12 col-sm-4 col-md-4">
+                <h4 id="topic">Using 100% of land</h4><br/>
+                <strong>For Crop 1:</strong><br/>
+                Total Investment(in Rs):  <span id="c1t1" class="R"></span><br/>
+                Total Returns(in Rs):  <span id="c1t9" class="G"></span><br/>
+                Profit from crop 1(in Rs):<span id="c1t2" class="G"></span><br/>
+                
+                Loss if crop 1 fails(in Rs): <span id="c1t3"  class="R"></span><br/>
+                Net CashFlow(in Rs): <span id="c1t7"  class="W"></span><br/>
+                (No other crop is present)<br/><br/><br/>
+
+                <strong>For Crop 2:</strong><br/>
+                Total Investment(in Rs):  <span id="c1t4"  class="R"></span><br/>
+                Total Returns(in Rs):  <span id="c1t10" class="G"></span><br/>
+                Profit from crop 2(in Rs):<span id="c1t5" class="G"></span><br/>
+                
+                Loss if crop 2 fails(in Rs): <span id="c1t6"  class="R"></span><br/>
+                Net CashFlow(in Rs): <span id="c1t8"  class="W"></span><br/>
+                (No other crop is present)<br/>
+                
+              </div>
+              <div class="col-12 col-sm-2 col-md-2">
+           
+
+              </div><br/><br/>
+              <div class="col-12 col-sm-4 col-md-4">
+                <h4 id="topic">Using 50% of land</h4><br/>
+                <strong>For Crop 1:</strong><br/>
+                Investment for crop 1(in Rs):  <span id="c2t11"  class="R"></span><br/>
+                Returns from crop 1(in Rs): <span id="c2t1"  class="G"></span><br/>
+                Profit from crop 1(in Rs):<span id="c2t2" class="G"></span><br/>
+                
+                Loss if crop 1 fails(in Rs): <span id="c2t3"  class="R"></span><br/>
+                Net CashFlow(in Rs): <span id="c2t9" class="W"></span><br/>
+                (if crop 1 fails and crop 2 survives)<br/>
+                <!--Profit from crop 2(in Rs): <span id="c2t4"></span><br/>-->
+
+                <strong>For Crop 2:</strong><br/>
+                 Investment for crop 2(in Rs):  <span id="c2t5"  class="R"></span><br/>
+                 Returns from crop 2(in Rs): <span id="c2t12"  class="G"></span><br/>
+                Profit from crop 2(in Rs):<span id="c2t6" class=
+                "G"></span><br/>
+                
+                Loss if crop 2 fails(in Rs): <span id="c2t7"  class="R"></span><br/>
+                Net CashFlow(in Rs): <span id="c2t10" class="W"></span><br/>
+                (if crop 2 fails and crop 1 survives)<br/>
+
+               <strong> Net Profit(in Rs):</strong> <span class="G" id="c2t13"></span><br/>
+               (if both crops survive)<br/>
+                <!--Profit from crop 1(in Rs): <span id="c2t8"></span><br/>-->
+              </div>
+          
+         
+          
+          <div class="col-12 col-sm-1 col-md-1"></div>
+      </div>
+     
+      
+            <div class="row row-content align-items-center">
+              <div class="col-12 col-sm-1 col-md-1"></div>
+              <div class="col-12 col-sm-4 col-md-4">
+                <h4 id="topic">Smart Yield</h4><br/>
+                <strong>For Crop 1:</strong><br/>
+                % Land: <span id="c3t1" class="Y"></span><br/>
+                Land in acres: <span id="c3t2" class="Y"></span><br/>
+                Investment for crop 1(in Rs):  <span id="c3t3"  class="R"></span><br/>
+                Returns from crop 1(in Rs): <span id="c3t4"  class="G"></span><br/>
+                Profit from crop 1(in Rs):<span id="c3t5" class="G"></span><br/>
+                
+                Loss if crop 1 fails(in Rs): <span id="c3t6"  class="R"></span><br/>
+                Net CashFlow(in Rs): <span id="c3t7" class="W"></span><br/>
+                (if crop 1 fails and crop 2 survives)<br/>
+               
+              </div><br/><br/>
+              <div class="col-12 col-sm-2 col-md-2"><br/><br/></div>
+              <div class="col-12 col-sm-4 col-md-4">
+                <strong>For Crop 2:</strong><br/>
+               
+                % Land: <span id="c3t8" class="Y"></span><br/>
+                Land in acres: <span id="c3t9" class="Y"></span><br/>
+                Investment for crop 1(in Rs):  <span id="c3t10"  class="R"></span><br/>
+                Returns from crop 1(in Rs): <span id="c3t11"  class="G"></span><br/>
+                Profit from crop 1(in Rs):<span id="c3t12" class="G"></span><br/>
+                
+                Loss if crop 1 fails(in Rs): <span id="c3t13"  class="R"></span><br/>
+                Net CashFlow(in Rs): <span id="c3t14" class="W"></span><br/>
+                (if crop 1 fails and crop 2 survives)<br/><br/>
+                <strong>Net Profit(in Rs):</strong><span id="c3t15" class="G"></span><br/>
+                (if both crops survive)<br/>
+              
+               
+                
+              
+               
+              </div>
+              <div class="col-12 col-sm-1 col-md-1"><br/><br/></div>
+              
+                
+              </div>
+              <div class="row row-content align-self-center">
+                <div class="col-12 col-sm-1 col-md-1"></div>
+                <div class="col-12 col-sm-4 col-md-4">
+                  <h4 id="topic">Difference between Net Cash Flow(in Rs)</h4><br/>
+<strong>Using 100% of land for crop 1(DNCF1):</strong> <span id="c4t1" class="W"></span><br/>
+<strong>Using 100% of land for crop 2(DNCF2):</strong> <span id="c4t2" class="W"></span><br/>
+<strong>Using 50% of land for each crop(DNCF3):</strong> <span id="c4t3" class="W"></span><br/>
+<strong>Using smart yield land % for each crop(DNCF4):</strong> <span id="c4t4" class="W"></span><br/><br/>
+<strong>Best Land Structure:</strong> <span id="c4t5" class="Y"></span><br/>
+
+
+                </div>
+
+
+
+                <div class="col-12 col-sm-1 col-md-1"></div>
+                <div class="col-12 col-sm-5 col-md-5">
+                  <div id="chart">
+                    <canvas id="myChart"></canvas><br/>
+                    <strong>Risk involved is directly proportional to the difference between the Net Cash Flow.</strong><br/>
+                  </div>
+
+                </div>
+                <div class="col-12 col-sm-1 col-md-1"></div>
+              </div>
+             
+            </div>
+           
+      
+          
+          <footer class="footer">
+            <div class="container">
+              <div class="row">
+                <div class="col-4 offset-1 col-sm-2">
+                
+                </div>
+                <div class="col-7 col-sm-5">
+               
+                </div>
+                <div class="col-12 col-sm-4 align-self-center">
+                  <div class="text-center">
+                    
+                    <a
+                      class="btn btn-social-icon btn-linkedin"
+                      href="http://www.linkedin.com"
+                      ><i class="fa fa-linkedin fa-lg"></i
+                    ></a>
+                    <a
+                      class="btn btn-social-icon btn-twitter"
+                      href="http://twitter.com/"
+                      ><i class="fa fa-twitter fa-lg"></i
+                    ></a>
+                    
+                    <a class="btn btn-social-icon" href="mailto:"
+                      ><i class="fa fa-envelope-o fa-lg"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-auto">
+                  <p>2020 Central Crew</p>
+                </div>
+              </div>
+            </div>
+          </footer>
+          <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+          <!-- build:js js/main.js -->
+          <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+          <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+          <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+          <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+          <script src="/javascripts/yieldCalculator.js"></script>
+          
+         
+    </body>
+  </html>
+</html>
